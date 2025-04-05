@@ -1,0 +1,229 @@
+//1.Create a 3x3 array filled with random integers between 0 and 10. Calculate the sum, mean, and standard deviation of the array.
+import numpy as np
+array = np.random.randint(0, 11, (3, 3))
+sum_array = np.sum(array)
+mean_array = np.mean(array)
+std_array = np.std(array)
+print("Array:")
+print(array)
+print(f"Sum: {sum_array}, Mean: {mean_array}, Standard Deviation: {std_array}")
+
+//2.Create a 1D array of 10 elements and compute the cumulative sum of the elements.
+array_1d = np.random.randint(0, 10, 10)
+cumulative_sum = np.cumsum(array_1d)
+print("1D Array:", array_1d)
+print("Cumulative Sum:", cumulative_sum)
+
+//3.Generate two 2x3 arrays with random integers and perform element-wise addition, subtraction, multiplication, and division.
+array1 = np.random.randint(0, 10, (2, 3))
+array2 = np.random.randint(0, 10, (2, 3))
+addition = array1 + array2
+subtraction = array1 - array2
+multiplication = array1 * array2
+division = array1 / array2  
+print("Array 1:", array1)
+print("Array 2:", array2)
+print("Addition:", addition)
+print("Subtraction:", subtraction)
+print("Multiplication:", multiplication)
+print("Division:", division)
+
+//4.Create a 4x4 identity matrix.
+identity_matrix = np.eye(4)
+print("4x4 Identity Matrix:")
+print(identity_matrix)
+
+//5.Given an array a = np.array([5, 10, 15, 20, 25]), divide each element by 5 using broadcasting.
+
+a = np.array([5, 10, 15, 20, 25])
+result = a / 5
+print("Divided by 5:", result)
+
+//6.Reshape a 1D array of 12 elements into a 3x4 matrix.
+
+array_1d = np.arange(12)
+reshaped_array = array_1d.reshape(3, 4)
+print("Reshaped 3x4 Matrix:")
+print(reshaped_array)
+
+//7.Flatten a 3x3 matrix into a 1D array.
+
+matrix_3x3 = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+flattened_array = matrix_3x3.flatten()
+print("Flattened 1D Array:", flattened_array)
+
+//8.Stack two 3x3 matrices horizontally and vertically.
+
+matrix1 = np.random.randint(0, 10, (3, 3))
+matrix2 = np.random.randint(0, 10, (3, 3))
+horizontal_stack = np.hstack((matrix1, matrix2))
+vertical_stack = np.vstack((matrix1, matrix2))
+print("Horizontal Stack:")
+print(horizontal_stack)
+print("Vertical Stack:")
+print(vertical_stack)
+
+//9.Concatenate two arrays of different sizes along a new axis.
+
+array1 = np.array([1, 2, 3])
+array2 = np.array([4, 5, 6])
+concatenated = np.concatenate((array1[:, np.newaxis], array2[:, np.newaxis]), axis=1)
+print("Concatenated along new axis:")
+print(concatenated)
+
+//10.Transpose a 3x2 matrix and then reshape it to have 3 rows and 2 columns.
+
+matrix_3x2 = np.random.randint(0, 10, (3, 2))
+transposed_matrix = matrix_3x2.T
+reshaped_matrix = transposed_matrix.reshape(3, 2)
+print("Transposed Matrix:")
+print(transposed_matrix)
+print("Reshaped Matrix (3x2):")
+print(reshaped_matrix)
+
+//11.Given a 1D array of 15 elements, extract elements at positions 2 to 10 with a step of 2.
+
+array = np.arange(1, 16)
+sliced_array = array[2:11:2]
+print("Sliced Array:", sliced_array)
+
+//12.Create a 5x5 matrix and extract the sub-matrix containing elements from rows 1 to 3 and columns 2 to 4.
+
+matrix_5x5 = np.random.randint(0, 10, (5, 5))
+sub_matrix = matrix_5x5[1:4, 2:5]
+print("Sub-matrix:")
+print(sub_matrix)
+
+//13.Replace all elements in a 1D array greater than 10 with the value 10.
+
+array = np.random.randint(0, 20, 10)
+array[array > 10] = 10
+print("Array with elements > 10 replaced by 10:", array)
+
+//14.Use fancy indexing to select elements from a 1D array at positions [0, 2, 4, 6].
+
+array = np.random.randint(0, 20, 10)
+fancy_indexed = array[[0, 2, 4, 6]]
+print("Fancy Indexed Elements:", fancy_indexed)
+
+//15.Create a 1D array of 10 elements and reverse it using slicing.
+
+array = np.random.randint(0, 20, 10)
+reversed_array = array[::-1]
+print("Reversed Array:", reversed_array)
+Broadcasting
+
+//16.Create a 3x3 matrix and add a 1x3 array to each row using broadcasting.
+
+matrix_3x3 = np.random.randint(0, 10, (3, 3))
+array_1x3 = np.array([1, 2, 3])
+result = matrix_3x3 + array_1x3
+print("Matrix after Broadcasting:")
+print(result)
+
+//17.Multiply a 1D array of 5 elements by a scalar value using broadcasting.
+
+array = np.random.randint(0, 10, 5)
+scalar = 3
+result = array * scalar
+print("Array multiplied by scalar:", result)
+
+//18.Subtract a 3x1 column vector from a 3x3 matrix using broadcasting.
+
+matrix_3x3 = np.random.randint(0, 10, (3, 3))
+column_vector = np.array([1, 2, 3]).reshape(3, 1)
+result = matrix_3x3 - column_vector
+print("Result after Subtraction with Broadcasting:")
+print(result)
+
+//19.Add a scalar to a 3D array and demonstrate how broadcasting works across all dimensions.
+
+array_3d = np.random.randint(0, 10, (2, 3, 3))
+scalar = 5
+result = array_3d + scalar
+print("3D Array after Scalar Addition:")
+print(result)
+
+//20.Create two arrays of shapes (4, 1) and (1, 5) and add them using broadcasting.
+
+array1 = np.random.randint(0, 10, (4, 1))
+array2 = np.random.randint(0, 10, (1, 5))
+result = array1 + array2
+print("Result of Broadcasting (4x1 and 1x5):")
+print(result)
+
+//21.Compute the square root of each element in a 2D array using vectorized operations.
+
+array_2d = np.random.randint(1, 20, (3, 3))
+sqrt_array = np.sqrt(array_2d)
+print("Square Root of Each Element:")
+print(sqrt_array)
+
+//22.Calculate the dot product of two 1D arrays of size 5.
+
+array1 = np.array([1, 2, 3, 4, 5])
+array2 = np.array([6, 7, 8, 9, 10])
+dot_product = np.dot(array1, array2)
+print("Dot Product:", dot_product)
+
+//23.Perform element-wise comparison of two 1D arrays and return an array of boolean values indicating where the first array has larger elements.
+
+array1 = np.array([5, 10, 15, 20, 25])
+array2 = np.array([3, 10, 8, 20, 30])
+comparison = array1 > array2
+print("Comparison (Array1 > Array2):", comparison)
+
+//24.Create a 2D array and apply a vectorized operation to double the value of each element.
+
+array_2d = np.random.randint(1, 10, (3, 3))
+doubled_array = array_2d * 2
+print("Doubled Array:")
+print(doubled_array)
+
+//25.Create a 1D array of 100 random integers and compute the sum of all even numbers using vectorized operations.
+
+array = np.random.randint(1, 20, 100)
+even_numbers_sum = np.sum(array[array % 2 == 0])
+print("Sum of Even Numbers:", even_numbers_sum)
+Linear Algebra
+
+//26.Create a 3x3 matrix and find its determinant.
+
+matrix_3x3 = np.random.randint(1, 10, (3, 3))
+determinant = np.linalg.det(matrix_3x3)
+print("Determinant:", determinant)
+
+//27.Given a 2x2 matrix, compute its inverse and verify by multiplying with the original matrix to obtain the identity matrix.
+
+matrix_2x2 = np.array([[4, 7], [2, 6]])
+inverse = np.linalg.inv(matrix_2x2)
+identity_matrix = np.dot(matrix_2x2, inverse)
+print("Inverse Matrix:")
+print(inverse)
+print("Product with Original Matrix (Identity Matrix):")
+print(identity_matrix)
+
+//28.Calculate the eigenvalues and eigenvectors of a 2x2 matrix.
+
+matrix_2x2 = np.array([[4, -2], [1, 1]])
+eigenvalues, eigenvectors = np.linalg.eig(matrix_2x2)
+print("Eigenvalues:", eigenvalues)
+print("Eigenvectors:")
+print(eigenvectors)
+
+//29.Solve the system of linear equations 2x + 3y = 5 and 4x + 6y = 10 using NumPy.
+
+A = np.array([[2, 3], [4, 6]])
+b = np.array([5, 10])
+solution = np.linalg.solve(A, b)
+print("Solution (x, y):", solution)
+
+//30.Perform Singular Value Decomposition (SVD) on a 3x3 matrix and reconstruct the original matrix using the SVD components.
+
+matrix = np.random.randint(1, 10, (3, 3))
+U, S, Vt = np.linalg.svd(matrix)
+reconstructed_matrix = np.dot(U, np.dot(np.diag(S), Vt))
+print("Original Matrix:")
+print(matrix)
+print("Reconstructed Matrix from SVD:")
+print(reconstructed_matrix)
